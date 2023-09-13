@@ -1,0 +1,7 @@
+{
+  "name": "among",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
