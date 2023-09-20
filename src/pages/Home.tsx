@@ -6,16 +6,18 @@ import { useLoader } from '@react-three/fiber'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { Canvas, useFrame, extend, useThree } from '@react-three/fiber';
 import React, { useRef, useState, useEffect} from 'react';
+import { DeviceOrientationControls } from '@react-three/drei';
+
 
 
 function Model(props:any) {
   const meshRef:any = useRef();
   const gltf = useLoader(GLTFLoader, '../../public/dapto.glb');
-  useFrame((state,delta) => (meshRef.current.rotation.y += delta));
+  // useFrame((state,delta) => (meshRef.current.rotation.y += delta));
   return(
     <primitive ref={meshRef}
     object={gltf.scene}
-    position={[0, -3, 4]}
+    position={[0, -3, 3]}
     children-0-castShadow
     />
   )
@@ -38,6 +40,9 @@ const Home: React.FC = () => {
   <Model>
 
   </Model>
+
+< DeviceOrientationControls/>
+
 
   <ambientLight/>
   </Canvas>      </IonContent>
